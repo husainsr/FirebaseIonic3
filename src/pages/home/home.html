@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addStudent()">
+    <ion-icon name="add"></ion-icon>
+  </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of student | async" (click)="showOptions(item)">
+      {{item.s_name}}  {{item.s_stream}}
+    </ion-item>
+
+    {{item | json}}
+  </ion-list>
+</ion-content>
